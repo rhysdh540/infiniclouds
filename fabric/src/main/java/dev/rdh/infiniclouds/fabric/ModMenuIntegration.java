@@ -1,4 +1,4 @@
-package dev.rdh.template.fabric;
+package dev.rdh.infiniclouds.fabric;
 
 import com.terraformersmc.modmenu.api.ModMenuApi;
 

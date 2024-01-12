@@ -1,11 +1,11 @@
-package dev.rdh.template;
+package dev.rdh.infiniclouds;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Template {
-	public static final String ID = "template";
-	public static final String NAME = "Template";
+public class Infiniclouds {
+	public static final String ID = "infiniclouds";
+	public static final String NAME = "Infiniclouds";
 	public static final String VERSION = Util.getVersion(ID).split("-build")[0];
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 

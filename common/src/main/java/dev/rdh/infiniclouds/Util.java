@@ -1,4 +1,4 @@
-package dev.rdh.template;
+package dev.rdh.infiniclouds;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 

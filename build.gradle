@@ -80,13 +80,12 @@ allprojects {
 }
 
 def setup() {
-    println "Template Mod v${mod_version}"
+    println "Infiniclouds v${mod_version}"
     String buildNumber = System.getenv('GITHUB_RUN_NUMBER')
     if(buildNumber != null) {
         println 'Build #' + buildNumber
         ext.build_number = buildNumber
     } else ext.build_number = null
-    println()
 
     println '\nPlugin versions:'
     apply plugin: 'architectury-plugin'

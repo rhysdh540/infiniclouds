@@ -1,26 +1,26 @@
 modLoader = "javafml"
 loaderVersion = "[${forge},)"
 license = "GPL-3.0"
-issueTrackerURL = "https://invalid.change.me"
+issueTrackerURL = "https://github.com/rhysdh540/infiniclouds/issues"
 
 [[mods]]
-modId = "template"
+modId = "infiniclouds"
 version = "${version}"
-displayName = "template"
+displayName = "Infiniclouds"
 logoFile = "icon.png"
 authors = "rdh"
 description = '''
-Example mod description.
+Makes clouds render farther out.
 '''
 
-[[dependencies.template]]
+[[dependencies.infiniclouds]]
 modId = "forge"
 mandatory = true
 versionRange = "[${forge},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.template]]
+[[dependencies.infiniclouds]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[${minecraft},)"

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "template",
+  "id": "infiniclouds",
   "version": "${version}",
-  "name": "template",
-  "description": "Example mod description",
+  "name": "Infiniclouds",
+  "description": "Makes clouds render farther out.",
   "authors": ["rdh"],
   "contact": {
 
@@ -12,12 +12,12 @@
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["dev.rdh.template.fabric.TemplateFabric"],
-    "modmenu": ["dev.rdh.template.fabric.ModMenuIntegration"]
+    "main": ["dev.rdh.infiniclouds.fabric.InfinicloudsFabric"],
+    "modmenu": ["dev.rdh.infiniclouds.fabric.ModMenuIntegration"]
   },
   "mixins": [
-    "template.mixins.json",
-    "template-common.mixins.json"
+    "infiniclouds.mixins.json",
+    "infiniclouds-common.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${fabric}",

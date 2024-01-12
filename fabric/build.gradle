@@ -7,10 +7,16 @@ configurations {
 }
 
 dependencies {
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_version}"
-    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}+${rootProject.minecraft_version}"
+    modImplementation "net.fabricmc:fabric-loader:${fabric_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}+${minecraft_version}"
 
-    modLocalRuntime "net.fabricmc.fabric-api:fabric-api-deprecated:${rootProject.fabric_api_version}+${rootProject.minecraft_version}"
+    modLocalRuntime "net.fabricmc.fabric-api:fabric-api-deprecated:${fabric_api_version}+${minecraft_version}"
 
-    modImplementation "com.terraformersmc:modmenu:${rootProject.mod_menu_version}"
+    modImplementation "com.terraformersmc:modmenu:${mod_menu_version}"
+
+    if(use_sodium.toBoolean()) {
+        modImplementation "maven.modrinth:sodium:mc${minecraft_version}-${sodium_version}"
+    } else {
+        modCompileOnly "maven.modrinth:sodium:mc${minecraft_version}-${sodium_version}"
+    }
 }

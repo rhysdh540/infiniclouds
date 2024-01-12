@@ -1,6 +1,6 @@
-package dev.rdh.template.forge;
+package dev.rdh.infiniclouds.forge;
 
-import dev.rdh.template.Template;
+import dev.rdh.infiniclouds.Infiniclouds;
 
 import net.minecraftforge.common.util.MavenVersionStringHelper;
 import net.minecraftforge.fml.ModList;
@@ -15,7 +15,7 @@ public class UtilImpl {
 
 		List<IModInfo> infoList = ModList.get().getModFileById(modid).getMods();
 		if (infoList.size() > 1) {
-			Template.LOGGER.error("Multiple mods for ID: " + modid);
+			Infiniclouds.LOGGER.error("Multiple mods for ID: " + modid);
 		}
 		for (IModInfo info : infoList) {
 			if (info.getModId().equals(modid)) {

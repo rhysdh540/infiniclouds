@@ -13,6 +13,12 @@ loom {
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
+    forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    if(use_sodium.toBoolean()) {
+        modImplementation "maven.modrinth:embeddium:${embeddium_version}+mc${minecraft_version}"
+    } else {
+        modCompileOnly "maven.modrinth:embeddium:${embeddium_version}+mc${minecraft_version}"
+    }
 }
 

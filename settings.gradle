@@ -7,7 +7,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'Mod Template'
+rootProject.name = 'Infiniclouds'
 
 include 'common'
 include 'fabric'

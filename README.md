@@ -1,5 +1,3 @@
-# mod template
+# infiniclouds
 
-a simple template for developing minecraft mods
-
-comes with mixins, jar merging, and github actions
+quite hot
