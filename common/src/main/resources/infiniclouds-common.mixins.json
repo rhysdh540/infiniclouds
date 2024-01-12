@@ -1,12 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
+  "plugin": "dev.rdh.infiniclouds.mixin.InfinicloudsMixinPlugin",
   "package": "dev.rdh.infiniclouds.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
     "GameRendererMixin",
+    "LevelRendererMixin",
     "sodium.CloudRendererMixin"
   ],
   "injectors": {
