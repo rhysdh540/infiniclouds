@@ -1,0 +1,16 @@
+apply from: rootProject.file('gradle/platform.gradle')
+
+architectury.fabric()
+
+configurations {
+    developmentFabric.extendsFrom common
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_version}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}+${rootProject.minecraft_version}"
+
+    modLocalRuntime "net.fabricmc.fabric-api:fabric-api-deprecated:${rootProject.fabric_api_version}+${rootProject.minecraft_version}"
+
+    modImplementation "com.terraformersmc:modmenu:${rootProject.mod_menu_version}"
+}

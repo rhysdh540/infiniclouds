@@ -1,0 +1,18 @@
+apply from: rootProject.file('gradle/platform.gradle')
+
+architectury.forge()
+
+configurations {
+    developmentForge.extendsFrom common
+}
+
+loom {
+    forge {
+        mixinConfigs "${archives_base_name}.mixins.json","${archives_base_name}-common.mixins.json"
+    }
+}
+
+dependencies {
+    forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
+}
+

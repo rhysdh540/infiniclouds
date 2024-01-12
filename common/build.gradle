@@ -1,0 +1,12 @@
+architectury {
+    common {
+        for (p in rootProject.subprojects) {
+            if(p != project) it.add(p.name)
+        }
+    }
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_version}"
+}
+

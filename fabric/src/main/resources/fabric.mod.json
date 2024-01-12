@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "template",
+  "version": "${version}",
+  "name": "template",
+  "description": "Example mod description",
+  "authors": ["rdh"],
+  "contact": {
+
+  },
+  "license": "GNU GPL 3.0",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.rdh.template.fabric.TemplateFabric"],
+    "modmenu": ["dev.rdh.template.fabric.ModMenuIntegration"]
+  },
+  "mixins": [
+    "template.mixins.json",
+    "template-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabric}",
+    "minecraft": ">=${minecraft}"
+  }
+}

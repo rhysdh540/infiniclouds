@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[${forge},)"
+license = "GPL-3.0"
+issueTrackerURL = "https://invalid.change.me"
+
+[[mods]]
+modId = "template"
+version = "${version}"
+displayName = "template"
+logoFile = "icon.png"
+authors = "rdh"
+description = '''
+Example mod description.
+'''
+
+[[dependencies.template]]
+modId = "forge"
+mandatory = true
+versionRange = "[${forge},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.template]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[${minecraft},)"
+ordering = "NONE"
+side = "BOTH"

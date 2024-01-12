@@ -1,0 +1,68 @@
+apply plugin: 'dev.architectury.loom'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+architectury {
+    platformSetupLoomIde()
+}
+
+loom {
+    runs {
+        remove server
+    }
+}
+
+configurations {
+    common
+    shadowCommon
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+}
+
+dependencies {
+    common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
+    shadowCommon(project(path: ':common', configuration: "transformProduction${project.name.capitalize()}")) { transitive = false }
+}
+
+processResources {
+    def properties = [
+            version: project.version,
+            minecraft: minecraft_version,
+            fabric: fabric_version,
+            fabric_api: fabric_api_version,
+            forge: forge_version.split("\\.")[0],
+    ]
+
+    inputs.properties(properties)
+
+    filesMatching(['fabric.mod.json', 'META-INF/mods.toml']) {
+        expand properties
+    }
+}
+
+remapJar {
+    inputFile = shadowJar.archiveFile
+    dependsOn shadowJar
+    archiveClassifier = null
+}
+
+shadowJar {
+    exclude 'architectury.common.json'
+    exclude '**/PlatformMethods.class'
+
+    configurations = [project.configurations.shadowCommon, project.configurations.shade]
+    archiveClassifier = 'dev-shadow'
+}
+
+jar.archiveClassifier = 'dev'
+
+sourcesJar {
+    def commonSources = project(':common').sourcesJar
+    dependsOn commonSources
+    from commonSources.archiveFile.map { zipTree(it) }
+}
+
+components.java {
+    withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
+        skip()
+    }
+}
